@@ -31,8 +31,8 @@ namespace FFMpegCore
         public FFMpegArgumentOptions WithDuration(TimeSpan? duration) => WithArgument(new DurationArgument(duration));
         public FFMpegArgumentOptions WithFastStart() => WithArgument(new FaststartArgument());
         public FFMpegArgumentOptions WithFrameOutputCount(int frames) => WithArgument(new FrameOutputCountArgument(frames));
-        public FFMpegArgumentOptions WithHardwareAcceleration(HardwareAccelerationDevice hardwareAccelerationDevice = HardwareAccelerationDevice.Auto) => WithArgument(new HardwareAccelerationArgument(hardwareAccelerationDevice));
-        
+        public FFMpegArgumentOptions WithHardwareAcceleration(HardwareAccelerationDevice hardwareAccelerationDevice = HardwareAccelerationDevice.Auto) => WithArgument(new HardwareAccelerationArgument(hardwareAccelerationDevice));        
+
         public FFMpegArgumentOptions UsingShortest(bool shortest = true) => WithArgument(new ShortestArgument(shortest));
         public FFMpegArgumentOptions UsingMultithreading(bool multithread) => WithArgument(new ThreadsArgument(multithread));
         public FFMpegArgumentOptions UsingThreads(int threads) => WithArgument(new ThreadsArgument(threads));
@@ -50,6 +50,7 @@ namespace FFMpegCore
         public FFMpegArgumentOptions Transpose(Transposition transposition) => WithArgument(new TransposeArgument(transposition));
         public FFMpegArgumentOptions Loop(int times) => WithArgument(new LoopArgument(times));
         public FFMpegArgumentOptions OverwriteExisting() => WithArgument(new OverwriteArgument());
+        public FFMpegArgumentOptions SelectStream(int index) => WithArgument(new MapStreamArgument(index));
 
         public FFMpegArgumentOptions ForceFormat(ContainerFormat format) => WithArgument(new ForceFormatArgument(format));
         public FFMpegArgumentOptions ForceFormat(string format) => WithArgument(new ForceFormatArgument(format));
